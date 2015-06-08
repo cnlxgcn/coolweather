@@ -242,7 +242,7 @@ public class ChooseAreaActivity extends Activity {
 	@Override
 	public void onBackPressed() {
 		// TODO 自动生成的方法存根
-		super.onBackPressed();
+		
 		if(currentLevel==LEVEL_COUNTY){
 			queryCities();
 		}else if(currentLevel==LEVEL_CITY){
