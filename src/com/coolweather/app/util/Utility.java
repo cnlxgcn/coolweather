@@ -11,7 +11,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
-import android.util.Log;
+
 
 import com.coolweather.app.model.City;
 import com.coolweather.app.model.CoolWeatherDB;
@@ -23,10 +23,7 @@ public class Utility {
 	 * 解析和处理服务器返回的省级数据
 	 */
 	public synchronized static boolean handleProvinceResponse(CoolWeatherDB coolWeatherDB,String response){
-		if(!TextUtils.isEmpty(response)){
-			
-			Log.d("Utility", response);
-			
+		if(!TextUtils.isEmpty(response)){			
 			
 			String[] allProvince=response.split(",");
 			if(allProvince!=null && allProvince.length>0){
@@ -122,7 +119,7 @@ public class Utility {
 	public static void saveWeatherInfo(Context context, String cityName,
 			String weatherCode, String temp1, String temp2, String weatherDesp,
 			String publishTime) {
-		SimpleDateFormat sdf=new SimpleDateFormat("yyyy年m月d日",Locale.CHINA);
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy年M月d日",Locale.CHINA);
 		SharedPreferences.Editor editor=PreferenceManager.getDefaultSharedPreferences(context).edit();
 		editor.putBoolean("city_selected", true);
 		editor.putString("city_name", cityName);
